@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bryły</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section id="header">
+        <h1> Bryły obrotowe</h1>
+        <p>Bryła obrotowa - bryła geometryczna ograniczona powierzchnia powstala z obrotu figury plasniej dookola prostej (osi obrotu)</p>
+        <hr>
+    </section>
+
+    <section id="container">
+        <section id="left">
+            <h3>Wybierz figurę: </h3>
+            <button class="select" onclick="showFigure('stozek')">Stożek</button></br>
+            <button class="select" onclick="showFigure('walec')">Walec</button></br>
+            <button class="select" onclick="showFigure('kula')">Kula</button>
+        </section>
+        <section id="middle">
+            <div id="stozek">
+                <h3>Stożek</h3>
+                <p>Vs = 1/3 * π * R<sup>2</sup> * H</p>
+                <form class="math-form">
+                    <label for="promien_stozka">Podaj długość promienia:</label></br>
+                    <input type="number" id="promien_stozka" name="promien_stozka"/></br>
+                    <label for="wysokosc_stozka">Podaj wysokość stożka:</label></br>
+                    <input type="number" id="wysokosc_stozka" name="wysokosc_stozka"/></br>
+                    <input type="button" onclick="calcCone()" value="Oblicz"/>
+                </form>
+            </div>
+            
+            <div id="walec" style="display:none;">
+                <h3>Walec</h3>
+                <p>Vs = π * R<sup>2</sup> * H</p>
+                <form class="math-form">
+                    <label for="promien_walca">Podaj długość promienia walca:</label></br>
+                    <input type="number" id="promien_walca" name="promien_walca"/></br>
+                    <label for="wysokosc_walca">Podaj wysokość walca:</label></br>
+                    <input type="number" id="wysokosc_walca" name="wysokosc_walca"/></br>
+                    <input type="button" onclick="calcCylinder()" value="Oblicz"/>
+                </form>
+            </div>
+            
+            <div id="kula" style="display:none;">
+                <h3>Kula</h3>
+                <p>Vs = 4/3 * π * R<sup>3</sup></p>
+                <form class="math-form">
+                    <label for="promien_kuli">Podaj długość promienia kuli:</label></br>
+                    <input type="number" id="promien_kuli" name="promien_kuli"/></br>
+                    <input type="button" onclick="calcSphere()" value="Oblicz"/>
+                </form>
+            </div>
+
+            <p id="display"></p>
+        </section>
+        <section id="right">
+            <div id="stozek-photo">
+                <img src="stozek.png" alt="Stozek"/>
+            </div>
+
+            <div id="walec-photo" style="display:none;">
+                <img src="walec.png" alt="Walec"/>
+            </div>
+
+            <div id="kula-photo" style="display:none;">
+                <img src="kula.png" alt="Kula"/>
+            </div>
+        </section>  
+        <script>
+            function showFigure(figure) 
+            {
+                document.getElementById('stozek').style.display = 'none';
+                document.getElementById('walec').style.display = 'none';
+                document.getElementById('kula').style.display = 'none';
+                document.getElementById('stozek-photo').style.display = 'none';
+                document.getElementById('walec-photo').style.display = 'none';
+                document.getElementById('kula-photo').style.display = 'none';
+
+                document.getElementById(figure).style.display = 'block';
+                let phot = figure + '-photo';
+                document.getElementById(phot).style.display = 'block';
+            }
+
+            function calcCone() 
+            {
+                var R = document.getElementById("promien_stozka").value;
+                var H = document.getElementById("wysokosc_stozka").value;
+                var calc = 1/3 * Math.PI * (R*R) * H;
+                var display = document.getElementById("display");
+                display.innerHTML = "Objetosc stozka: " + calc;
+                return false;
+            }
+
+            function calcCylinder() 
+            {
+                var R = document.getElementById("promien_walca").value;
+                var H = document.getElementById("wysokosc_walca").value;
+                var calc = Math.PI * (R*R) *H;
+                var display = document.getElementById("display");
+                display.innerHTML = "Objetosc walca: " + calc;
+                return false;
+            }
+
+            function calcSphere() 
+            {
+                var R = document.getElementById("promien_kuli").value;
+                var calc = 4/3 * Math.PI * (R*R*R);
+                var display = document.getElementById("display");
+                display.innerHTML = "Objetosc kuli: " + calc;
+                return false;
+            }
+        </script>
+    </section>
+</body>
+</html>

@@ -1,0 +1,129 @@
+*
+{
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+body
+{
+    background-color: rgb(39, 76, 67);
+    color: whitesmoke;
+}
+
+#header{
+    display: flex;
+    width: 100%;
+    height: 150px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+h1
+{
+    font-size: 38px;
+    background-color: rgba(0,0,0,0.3);
+    border-radius: 25px;
+    width: 25%;
+    margin: 10px;
+    box-shadow: 5px 5px 0 0 rgba(0, 0, 0, 0.4);
+    -webkit-box-shadow:0 0 10px 0 rgba(0, 0, 0, 0.4);
+}
+
+hr
+{
+    width: 90%;
+    height: 5px;
+}
+
+#container
+{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    height: 300px;
+    text-align: center;
+}
+
+#left, #right
+{
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+#middle
+{
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    height: 300px;
+    align-items: center;
+    justify-content: center;
+}
+
+#stozek-photo
+{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#secret
+{
+    display: none !important;
+}
+
+.math-form input
+{
+   margin: 5px;
+   background-color: rgb(39, 76, 67);
+   color: aliceblue;
+   border: 2px groove rgba(255,255,255,0.3);    
+}
+
+.math-form label
+{
+    color: rgb(218, 175, 110);
+}
+
+.math-form input[type="button"]
+{
+   margin-top: 9px;
+   background-color: rgb(39, 76, 67);
+   border: 2px groove rgba(190, 130, 38, 0.9); 
+   background-color: rgba(190, 130, 38, 0.5);
+   width: 128px;
+   color: aliceblue;
+   height: 48px;
+   box-shadow: 5px 5px 0 0 rgba(143, 98, 14, 0.5);
+   -webkit-box-shadow:0 0 10px rgba(218, 149, 21, 0.5);
+   transition: 0.3s;
+}
+
+.math-form input[type="button"]:hover, #left button:hover
+{
+    box-shadow: 5px 5px 0 0 rgba(182, 134, 45, 0.7);
+    -webkit-box-shadow:0 0 10px rgba(219, 186, 123, 0.7);
+}
+
+#left button
+{
+   margin-top: 9px;
+   background-color: rgb(39, 76, 67);
+   border: 2px groove rgba(190, 130, 38, 0.9); 
+   background-color: rgba(190, 130, 38, 0.5);
+   width: 128px;
+   height: 48px;
+   color: aliceblue;
+   box-shadow: 5px 5px 0 0 rgba(143, 98, 14, 0.5);
+   -webkit-box-shadow:0 0 10px rgba(218, 149, 21, 0.5);
+   transition: 0.3s;
+}
